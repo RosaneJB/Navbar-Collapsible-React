@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital@1&family=Open+Sans:ital,wght@1,300&family=Poppins:ital,wght@1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+body {
+    background: #fff;
+    min-height: 100vh;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    height: 60px;
+}
+header .logo {
+    height: 60px;
+    line-height: 60px;
+    font-weight: 2em;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    justify-content:center;
+    padding-left: 20px;
+    text-decoration: none;
+}
+header #toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: #9051ff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header #toggle::before {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(-5px);
+    transition: 0.2s;
+}
+header #toggle::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(5px);
+    transition: 0.2s;
+}
+header #toggle.active::before {
+    transform: translateY(0px) rotate(45deg);
+}
+header #toggle.active::after {
+    transform: translateY(0px) rotate(-45deg);
+}
+header #toggle.active {
+    background: #f7226a;
+}
+header #navbar {
+    position: relative;
+    height: 60px;
+    right: 60px;
+    background: #fff;
+    transition: 0.5s;
+    width: 0px;
+    overflow: hidden;
+}
+header #navbar.active {
+    width: 660px;
+}
+header #navbar ul {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+header #navbar ul li {
+    list-style: none;
+}
+header #navbar ul li a {
+    color: #12334e;
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 0 15px;
+    letter-spacing: 2px;
+}
+header #navbar ul li a:hover {
+    color: #fff;
+    background: #9051ff;
+}
+main {
+    min-height: calc(100vh - 84px);
+}
+footer {
+    height: 15px;
+}
